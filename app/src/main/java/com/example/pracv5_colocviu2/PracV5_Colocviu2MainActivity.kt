@@ -80,7 +80,7 @@ class PracV5_Colocviu2MainActivity : AppCompatActivity() {
             }
 
             // Resetam textul rezultatelor
-            clientResultTextView.text = "Fetching data..."
+            clientResultTextView.text = ""
 
             // Pornim un thread de client care se conecteaza la server
             val clientThread = ClientThread(

@@ -70,15 +70,16 @@ class CommunicationThread(private val serverThread: ServerThread, private val so
                 Log.i(Constants.TAG, "Data found in cache for $city!")
             }
 
-            // 7. Cerinta 3d: Trimitem raspunsul inapoi la client
+            // 7. Cerinta 3d: Trimitem raspunsul cu tot cu ETICHETA (Label)
             if (data != null) {
                 val result = when (informationType) {
                     "all" -> data.toString()
-                    "temperature" -> data.temperature
-                    "wind" -> data.windSpeed
-                    "condition" -> data.condition
-                    "humidity" -> data.humidity
-                    "pressure" -> data.pressure
+                    // MODIFICARE: Adaugam textul explicativ inainte de valoare
+                    "temperature" -> "Temperature: ${data.temperature} C"
+                    "wind" -> "Wind Speed: ${data.windSpeed} m/s"
+                    "condition" -> "Condition: ${data.condition}"
+                    "humidity" -> "Humidity: ${data.humidity} %"
+                    "pressure" -> "Pressure: ${data.pressure} hPa"
                     else -> "Wrong information type"
                 }
                 // Trimitem rezultatul
