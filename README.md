@@ -1,1 +1,2 @@
-# pracV5_colocviu2
+# NASTASE Cristain-Gabriel practive v5
+rezolvare pe celalalt branch
